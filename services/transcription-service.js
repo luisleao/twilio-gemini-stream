@@ -51,6 +51,7 @@ class TranscriptionService extends EventEmitter {
     
     const result = transcriptionEvent.results[0];
     const text = result.alternatives[0]?.transcript || '';
+    console.log('STT partial result: ', text)
 
     // if we receive an isFinal and speechFinal has not already happened then we should consider this the end of of the human speech and emit the transcription
     if (result.isFinal) {
